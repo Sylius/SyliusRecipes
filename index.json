@@ -1,0 +1,14 @@
+{
+    "recipes": {
+        "sylius/plus": [
+            "1.0"
+        ]
+    },
+    "branch": "master",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/Sylius/SyliusRecipes",
+        "origin_template": "{package}:{version}@github.com/Sylius/SyliusRecipes:master",
+        "recipe_template": "https://api.github.com/repos/Sylius/SyliusRecipes/contents/{package}/{version}/manifest.json"
+    }
+}
