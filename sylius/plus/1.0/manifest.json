@@ -14,7 +14,8 @@
                 "config/packages/_sylius.yaml": {
                     "contents": [
                         "imports:",
-                        "    - { resource: \"@SyliusPlugin/Resources/config/config.yaml\" }"
+                        "    - { resource: \"@SyliusPlugin/Resources/config/config.yaml\" }",
+                        ""
                     ],
                     "executable": false
                 },
@@ -24,7 +25,8 @@
                         "    resource: \"@SyliusPlusPlugin/Resources/config/shop_routing.yaml\"",
                         "    prefix: /{_locale}",
                         "    requirements:",
-                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$"
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        ""
                     ],
                     "executable": false
                 },
@@ -32,7 +34,8 @@
                     "contents": [
                         "sylius_plus_admin:",
                         "    resource: \"@SyliusPlusPlugin/Resources/config/admin_routing.yaml\"",
-                        "    prefix: /admin"
+                        "    prefix: /admin",
+                        ""
                     ],
                     "executable": false
                 },
@@ -40,9 +43,9 @@
                     "contents": [
                         "<?php",
                         "",
-                        "declare(strict_types=1);,",
+                        "declare(strict_types=1);",
                         "",
-                        "namespace App\\Entity\\User;,",
+                        "namespace App\\Entity\\User;",
                         "",
                         "use Doctrine\\Common\\Collections\\ArrayCollection;",
                         "use Doctrine\\ORM\\Mapping as ORM;",
@@ -72,7 +75,7 @@
                         "        parent::__construct();",
                         "",
                         "        $this->rolesResources = new ArrayCollection();",
-                        "     }",
+                        "    }",
                         "}",
                         ""
                     ],
@@ -84,8 +87,8 @@
                         "",
                         "declare(strict_types=1);",
                         "",
-                        "namespace App\\Entity;",
-
+                        "namespace App\\Entity\\Channel;",
+                        "",
                         "use Doctrine\\ORM\\Mapping as ORM;",
                         "use Sylius\\Component\\Core\\Model\\Channel as BaseChannel;",
                         "use Sylius\\Component\\Core\\Model\\ChannelInterface;",
@@ -124,7 +127,7 @@
                         "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\CustomerInterface as CustomerPoolsCustomerInterface;",
                         "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\CustomerPoolAwareTrait;",
                         "use Sylius\\Plus\\Loyalty\\Domain\\Model\\CustomerInterface as LoyaltyCustomerInterface;",
-                        "use Sylius\\Plus\\Loyalty\\Domain\\Model\\LoyaltyAwareTrait;,",
+                        "use Sylius\\Plus\\Loyalty\\Domain\\Model\\LoyaltyAwareTrait;",
                         "",
                         "/**",
                         " * @ORM\\Entity",
@@ -134,7 +137,8 @@
                         "{",
                         "    use CustomerPoolAwareTrait;",
                         "    use LoyaltyAwareTrait;",
-                        "}"
+                        "}",
+                        ""
                     ],
                     "executable": false
                 },
@@ -159,7 +163,8 @@
                         "class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface",
                         "{",
                         "    use ReturnRequestAwareTrait;",
-                        "}"
+                        "}",
+                        ""
                     ],
                     "executable": false
                 },
@@ -199,13 +204,14 @@
                         "    {",
                         "        return new ProductVariantTranslation();",
                         "    }",
-                        "}"
+                        "}",
+                        ""
                     ],
                     "executable": false
                 },
                 "src/Entity/Shipping/Shipment.php": {
                     "contents": [
-                        "<?php,",
+                        "<?php",
                         "",
                         "declare(strict_types=1);",
                         "",
@@ -224,12 +230,13 @@
                         "class Shipment extends BaseShipment implements ShipmentInterface, InventoryShipmentInterface",
                         "{",
                         "    use InventorySourceAwareTrait;",
-                        "}"
+                        "}",
+                        ""
                     ],
                     "executable": false
                 }
             },
-            "ref": "94404006aa1260354333f59487c27842f84062c6"
+            "ref": "83ca3b38f6e5bc11c9a16d963db6ed4064820611"
         }
     }
 }
