@@ -8,9 +8,6 @@
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/",
                     "src/": "%SRC_DIR%/"
-                },
-                "composer-scripts": {
-                    "cp -fr vendor/sylius/plus/src/Resources/templates/bundles/* templates/bundles": "script"
                 }
             },
             "files": {
@@ -239,7 +236,7 @@
                     "executable": false
                 }
             },
-            "ref": "6ba0c766b80b1c760648b13c17480d689be6d2eb"
+            "ref": "83ca3b38f6e5bc11c9a16d963db6ed4064820611"
         }
     }
 }
