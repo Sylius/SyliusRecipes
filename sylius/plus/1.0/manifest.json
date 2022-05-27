@@ -8,10 +8,13 @@
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/",
                     "src/": "%SRC_DIR%/"
+                },
+                "copy-from-package": {
+                    "src/Resources/templates/bundles/": "templates/bundles/"
                 }
             },
             "files": {
-                "config/packages/_sylius.yaml": {
+                "config/packages/_sylius_plus.yaml": {
                     "contents": [
                         "imports:",
                         "    - { resource: \"@SyliusPlugin/Resources/config/config.yaml\" }",
@@ -19,7 +22,7 @@
                     ],
                     "executable": false
                 },
-                "config/routes/sylius_shop.yaml": {
+                "config/routes/sylius_plus_shop.yaml": {
                     "contents": [
                         "sylius_plus_shop:",
                         "    resource: \"@SyliusPlusPlugin/Resources/config/shop_routing.yaml\"",
@@ -30,7 +33,7 @@
                     ],
                     "executable": false
                 },
-                "config/routes/sylius_admin.yaml": {
+                "config/routes/sylius_plus_admin.yaml": {
                     "contents": [
                         "sylius_plus_admin:",
                         "    resource: \"@SyliusPlusPlugin/Resources/config/admin_routing.yaml\"",
@@ -236,7 +239,7 @@
                     "executable": false
                 }
             },
-            "ref": "83ca3b38f6e5bc11c9a16d963db6ed4064820611"
+            "ref": "fb0a0b23f80ab0b3ae8a1d4d7881d522a74d7286"
         }
     }
 }
