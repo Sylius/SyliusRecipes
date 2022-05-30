@@ -8,6 +8,8 @@
 composer config --global --auth github-oauth.github.com [token]
 ```
 
+> Your Github Token: https://github.com/settings/tokens
+
 2. Update `composer.json` file with Flex endpoint
 ```json
 {
