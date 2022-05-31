@@ -1,6 +1,7 @@
 {
     "recipes": {
         "sylius/plus": [
+            "1.0",
             "1.0.0-ALPHA.7",
             "dev-master"
         ]
