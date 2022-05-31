@@ -1,0 +1,245 @@
+{
+    "manifests": {
+        "sylius/plus": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\Plus\\SyliusPlusPlugin": ["all"]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                },
+                "copy-from-package": {
+                    "src/Resources/templates/bundles/": "templates/bundles/"
+                }
+            },
+            "files": {
+                "config/packages/_sylius_plus.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusPlugin/Resources/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_plus_shop.yaml": {
+                    "contents": [
+                        "sylius_plus_shop:",
+                        "    resource: \"@SyliusPlusPlugin/Resources/config/shop_routing.yaml\"",
+                        "    prefix: /{_locale}",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_plus_admin.yaml": {
+                    "contents": [
+                        "sylius_plus_admin:",
+                        "    resource: \"@SyliusPlusPlugin/Resources/config/admin_routing.yaml\"",
+                        "    prefix: /admin",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/User/AdminUser.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\User;",
+                        "",
+                        "use Doctrine\\Common\\Collections\\ArrayCollection;",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Channel\\Model\\ChannelAwareInterface;",
+                        "use Sylius\\Component\\Core\\Model\\AdminUser as BaseAdminUser;",
+                        "use Sylius\\Component\\Core\\Model\\AdminUserInterface;",
+                        "use Sylius\\Plus\\ChannelAdmin\\Domain\\Model\\AdminChannelAwareTrait;",
+                        "use Sylius\\Plus\\Entity\\LastLoginIpAwareInterface;",
+                        "use Sylius\\Plus\\Entity\\LastLoginIpAwareTrait;",
+                        "use Sylius\\Plus\\Rbac\\Domain\\Model\\AdminUserInterface as RbacAdminUserInterface;",
+                        "use Sylius\\Plus\\Rbac\\Domain\\Model\\RoleableTrait;",
+                        "use Sylius\\Plus\\Rbac\\Domain\\Model\\ToggleablePermissionCheckerTrait;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity",
+                        " * @ORM\\Table(name=\"sylius_admin_user\")",
+                        " */",
+                        "class AdminUser extends BaseAdminUser implements AdminUserInterface, RbacAdminUserInterface, ChannelAwareInterface, LastLoginIpAwareInterface",
+                        "{",
+                        "    use AdminChannelAwareTrait;",
+                        "    use LastLoginIpAwareTrait;",
+                        "    use ToggleablePermissionCheckerTrait;",
+                        "    use RoleableTrait;",
+                        "",
+                        "    public function __construct()",
+                        "    {",
+                        "        parent::__construct();",
+                        "",
+                        "        $this->rolesResources = new ArrayCollection();",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Channel/Channel.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Channel;",
+                        "",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Core\\Model\\Channel as BaseChannel;",
+                        "use Sylius\\Component\\Core\\Model\\ChannelInterface;",
+                        "use Sylius\\Plus\\BusinessUnits\\Domain\\Model\\BusinessUnitAwareTrait;",
+                        "use Sylius\\Plus\\BusinessUnits\\Domain\\Model\\ChannelInterface as BusinessUnitsChannelInterface;",
+                        "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\ChannelInterface as CustomerPoolsChannelInterface;",
+                        "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\CustomerPoolAwareTrait;",
+                        "use Sylius\\Plus\\Returns\\Domain\\Model\\ChannelInterface as ReturnsChannelInterface;",
+                        "use Sylius\\Plus\\Returns\\Domain\\Model\\ReturnRequestsAllowedAwareTrait;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity",
+                        " * @ORM\\Table(name=\"sylius_channel\")",
+                        " */",
+                        "class Channel extends BaseChannel implements ChannelInterface, ReturnsChannelInterface, BusinessUnitsChannelInterface, CustomerPoolsChannelInterface",
+                        "{",
+                        "    use ReturnRequestsAllowedAwareTrait;",
+                        "    use CustomerPoolAwareTrait;",
+                        "    use BusinessUnitAwareTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Customer/Customer.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Customer;",
+                        "",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Core\\Model\\Customer as BaseCustomer;",
+                        "use Sylius\\Component\\Core\\Model\\CustomerInterface;",
+                        "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\CustomerInterface as CustomerPoolsCustomerInterface;",
+                        "use Sylius\\Plus\\CustomerPools\\Domain\\Model\\CustomerPoolAwareTrait;",
+                        "use Sylius\\Plus\\Loyalty\\Domain\\Model\\CustomerInterface as LoyaltyCustomerInterface;",
+                        "use Sylius\\Plus\\Loyalty\\Domain\\Model\\LoyaltyAwareTrait;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity",
+                        " * @ORM\\Table(name=\"sylius_customer\")",
+                        " */",
+                        "class Customer extends BaseCustomer implements CustomerInterface, CustomerPoolsCustomerInterface, LoyaltyCustomerInterface",
+                        "{",
+                        "    use CustomerPoolAwareTrait;",
+                        "    use LoyaltyAwareTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Order/Order.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Order;",
+                        "",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Core\\Model\\Order as BaseOrder;",
+                        "use Sylius\\Component\\Core\\Model\\OrderInterface;",
+                        "use Sylius\\Plus\\Returns\\Domain\\Model\\OrderInterface as ReturnsOrderInterface;",
+                        "use Sylius\\Plus\\Returns\\Domain\\Model\\ReturnRequestAwareTrait;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity",
+                        " * @ORM\\Table(name=\"sylius_order\")",
+                        " */",
+                        "class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface",
+                        "{",
+                        "    use ReturnRequestAwareTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Product/ProductVariant.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Product;",
+                        "",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Core\\Model\\ProductVariant as BaseProductVariant;",
+                        "use Sylius\\Component\\Core\\Model\\ProductVariantInterface;",
+                        "use Sylius\\Component\\Product\\Model\\ProductVariantTranslationInterface;",
+                        "use Sylius\\Plus\\Inventory\\Domain\\Model\\InventorySourceStocksAwareTrait;",
+                        "use Sylius\\Plus\\Inventory\\Domain\\Model\\ProductVariantInterface as InventoryProductVariantInterface;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity()",
+                        " * @ORM\\Table(name=\"sylius_product_variant\")",
+                        " */",
+                        "class ProductVariant extends BaseProductVariant implements ProductVariantInterface, InventoryProductVariantInterface",
+                        "{",
+                        "    use InventorySourceStocksAwareTrait {",
+                        "        __construct as private initializeProductVariantTrait;",
+                        "    }",
+                        "",
+                        "    public function __construct()",
+                        "    {",
+                        "        parent::__construct();",
+                        "",
+                        "        $this->initializeProductVariantTrait();",
+                        "    }",
+                        "",
+                        "    protected function createTranslation(): ProductVariantTranslationInterface",
+                        "    {",
+                        "        return new ProductVariantTranslation();",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Shipping/Shipment.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Shipping;",
+                        "",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Sylius\\Component\\Core\\Model\\Shipment as BaseShipment;",
+                        "use Sylius\\Component\\Core\\Model\\ShipmentInterface;",
+                        "use Sylius\\Plus\\Inventory\\Domain\\Model\\InventorySourceAwareTrait;",
+                        "use Sylius\\Plus\\Inventory\\Domain\\Model\\ShipmentInterface as InventoryShipmentInterface;",
+                        "",
+                        "/**",
+                        " * @ORM\\Entity()",
+                        " * @ORM\\Table(name=\"sylius_shipment\")",
+                        " */",
+                        "class Shipment extends BaseShipment implements ShipmentInterface, InventoryShipmentInterface",
+                        "{",
+                        "    use InventorySourceAwareTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f4c93caef0a21a0bb78d5a56890653d5abf463f0"
+        }
+    }
+}
