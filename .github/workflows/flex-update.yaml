@@ -1,0 +1,14 @@
+name: Update Flex endpoint
+
+on:
+    push:
+        branches:
+            - main
+
+defaults:
+    run:
+        shell: bash
+
+jobs:
+    call-flex-update:
+        uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-update.yaml@main

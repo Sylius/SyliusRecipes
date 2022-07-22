@@ -1,0 +1,7 @@
+name: Update Flex Archives
+
+on: [workflow_dispatch]
+
+jobs:
+    call-flex-update:
+        uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-update-archived.yaml@main
