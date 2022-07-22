@@ -1,15 +1,22 @@
 {
+    "aliases": {
+        "multistore": "sylius/multi-store-plugin"
+    },
     "recipes": {
-        "sylius/plus": [
-            "1.0.0-ALPHA.7",
-            "1.0"
+        "sylius/multi-store-plugin": [
+            "0.1"
         ]
     },
-    "branch": "master",
-    "is_contrib": true,
+    "recipe-conflicts": [],
+    "versions": [],
+    "branch": "main",
+    "is_contrib": false,
     "_links": {
         "repository": "github.com/Sylius/SyliusRecipes",
-        "origin_template": "{package}:{version}@github.com/Sylius/SyliusRecipes:master",
-        "recipe_template": "https://api.github.com/repos/Sylius/SyliusRecipes/contents/{package}/{version}/manifest.json"
+        "origin_template": "{package}:{version}@github.com/Sylius/SyliusRecipes:main",
+        "recipe_template": "https://raw.githubusercontent.com/Sylius/SyliusRecipes/flex/main/{package_dotted}.{version}.json",
+        "recipe_template_relative": "{package_dotted}.{version}.json",
+        "archived_recipes_template": "https://raw.githubusercontent.com/Sylius/SyliusRecipes/flex/main/archived/{package_dotted}/{ref}.json",
+        "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
     }
 }
