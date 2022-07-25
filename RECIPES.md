@@ -4,4 +4,4 @@ Additional recipes can be found on the [Contrib Recipes Repository](https://gith
 
 | Package | Latest Recipe | Aliases |
 | --- | --- | --- |
-| [sylius/multi-store-plugin](https://packagist.org/packages/sylius/multi-store-plugin) | [0.1](sylius/multi-store-plugin/0.1) | `multistore` |
+| [sylius/multi-store-plugin](https://packagist.org/packages/sylius/multi-store-plugin) | [0.2](sylius/multi-store-plugin/0.2) | `multistore` |

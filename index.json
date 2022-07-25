@@ -4,7 +4,7 @@
     },
     "recipes": {
         "sylius/multi-store-plugin": [
-            "0.1"
+            "0.2"
         ]
     },
     "recipe-conflicts": [],
