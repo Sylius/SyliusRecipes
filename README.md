@@ -16,7 +16,7 @@ composer config --global --auth github-oauth.github.com [token]
     "extra": {
         "symfony": {
             "endpoint": [
-                "https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json",
+                "https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main",
                 "flex://defaults"
             ]
         }
