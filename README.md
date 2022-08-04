@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">Sylius Recipies</h1>
+<h1 align="center">Sylius Recipes</h1>
 
 <p align="center">Based on Symfony Flex</p>
 
