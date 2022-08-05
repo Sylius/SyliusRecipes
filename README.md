@@ -1,16 +1,16 @@
-# Sylius Recipes
-## Based on Symfony Flex
+<p align="center">
+    <a href="https://sylius.com" target="_blank">
+        <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
+    </a>
+</p>
 
-### Configure Access to Recipes
+<h1 align="center">Sylius Recipes</h1>
 
-1. Configure access to recipes repository (unless we make it public)
-```bash
-composer config --global --auth github-oauth.github.com [token]
-```
+<p align="center">Based on Symfony Flex</p>
 
-> Your Github Token: https://github.com/settings/tokens
+## Configure Access to Recipes
 
-2. Update `composer.json` file with Flex endpoint
+Update `composer.json` file with Flex endpoint
 ```json
 {
     "extra": {
