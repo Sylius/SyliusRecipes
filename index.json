@@ -3,6 +3,9 @@
         "multistore": "sylius/multi-store-plugin"
     },
     "recipes": {
+        "sylius/multi-source-inventory-plugin": [
+            "0.1"
+        ],
         "sylius/multi-store-plugin": [
             "0.2"
         ]
