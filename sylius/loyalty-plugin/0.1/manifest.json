@@ -1,0 +1,9 @@
+{
+    "aliases": ["loyalty"],
+    "bundles": {
+        "Sylius\\LoyaltyPlugin\\SyliusLoyaltyPlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
