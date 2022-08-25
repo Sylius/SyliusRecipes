@@ -1,0 +1,36 @@
+{
+    "manifests": {
+        "sylius/partial-shipment-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\PartialShipmentPlugin\\SyliusPartialShipmentPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_partial_shipment_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusPartialShipmentPlugin/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_partial_shipment_plugin.yaml": {
+                    "contents": [
+                        "sylius_partial_shipment_admin:",
+                        "    resource: \"@SyliusPartialShipmentPlugin/config/routes/admin_routing.yaml\"",
+                        "    prefix: '/%sylius_admin.path_name%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c87e13c08c090ce50be05cdba60f168d15f58bec"
+        }
+    }
+}

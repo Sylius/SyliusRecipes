@@ -4,6 +4,8 @@
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin",
+        "partial-shipment": "sylius/partial-shipment-plugin",
+        "partialshipment": "sylius/partial-shipment-plugin",
         "return": "sylius/return-plugin",
         "returns": "sylius/return-plugin"
     },
@@ -16,6 +18,9 @@
         ],
         "sylius/multi-store-plugin": [
             "0.2"
+        ],
+        "sylius/partial-shipment-plugin": [
+            "0.1"
         ],
         "sylius/return-plugin": [
             "0.1"
