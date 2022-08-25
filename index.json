@@ -3,7 +3,9 @@
         "loyalty": "sylius/loyalty-plugin",
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
-        "multistore": "sylius/multi-store-plugin"
+        "multistore": "sylius/multi-store-plugin",
+        "return": "sylius/return-plugin",
+        "returns": "sylius/return-plugin"
     },
     "recipes": {
         "sylius/loyalty-plugin": [
@@ -14,6 +16,9 @@
         ],
         "sylius/multi-store-plugin": [
             "0.2"
+        ],
+        "sylius/return-plugin": [
+            "0.1"
         ]
     },
     "recipe-conflicts": [],
