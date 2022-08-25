@@ -4,5 +4,5 @@ Additional recipes can be found on the [Contrib Recipes Repository](https://gith
 
 | Package | Latest Recipe | Aliases |
 | --- | --- | --- |
-| [sylius/multi-source-inventory-plugin](https://packagist.org/packages/sylius/multi-source-inventory-plugin) | [0.1](sylius/multi-source-inventory-plugin/0.1) |  |
+| [sylius/multi-source-inventory-plugin](https://packagist.org/packages/sylius/multi-source-inventory-plugin) | [0.1](sylius/multi-source-inventory-plugin/0.1) | `multi-source-inventory`, `multisourceinventory` |
 | [sylius/multi-store-plugin](https://packagist.org/packages/sylius/multi-store-plugin) | [0.2](sylius/multi-store-plugin/0.2) | `multistore` |
