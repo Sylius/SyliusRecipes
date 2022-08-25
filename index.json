@@ -1,10 +1,14 @@
 {
     "aliases": {
+        "loyalty": "sylius/loyalty-plugin",
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin"
     },
     "recipes": {
+        "sylius/loyalty-plugin": [
+            "0.1"
+        ],
         "sylius/multi-source-inventory-plugin": [
             "0.1"
         ],

@@ -1,0 +1,47 @@
+{
+    "manifests": {
+        "sylius/loyalty-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\LoyaltyPlugin\\SyliusLoyaltyPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_loyalty_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusLoyaltyPlugin/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_loyalty_plugin_admin.yaml": {
+                    "contents": [
+                        "sylius_loyalty_admin:",
+                        "    resource: \"@SyliusLoyaltyPlugin/config/admin_routing.yaml\"",
+                        "    prefix: '/%sylius_admin.path_name%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_loyalty_plugin_shop.yaml": {
+                    "contents": [
+                        "sylius_loyalty_shop:",
+                        "    resource: \"@SyliusLoyaltyPlugin/config/shop_routing.yaml\"",
+                        "    prefix: /{_locale}",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "59a51b688ce51227e47f506eba42fd7c3355f684"
+        }
+    }
+}
