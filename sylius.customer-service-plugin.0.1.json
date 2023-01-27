@@ -1,9 +1,9 @@
 {
     "manifests": {
-        "sylius/partial-shipment-plugin": {
+        "sylius/customer-service-plugin": {
             "manifest": {
                 "bundles": {
-                    "Sylius\\PartialShipmentPlugin\\SyliusPartialShipmentPlugin": [
+                    "Sylius\\CustomerServicePlugin\\SyliusCustomerServicePlugin": [
                         "all"
                     ]
                 },
@@ -12,25 +12,25 @@
                 }
             },
             "files": {
-                "config/packages/sylius_partial_shipment_plugin.yaml": {
+                "config/packages/sylius_customer_service_plugin.yaml": {
                     "contents": [
                         "imports:",
-                        "    - { resource: \"@SyliusPartialShipmentPlugin/config/config.yaml\" }",
+                        "    - { resource: \"@SyliusCustomerServicePlugin/config/config.yaml\" }",
                         ""
                     ],
                     "executable": false
                 },
-                "config/routes/sylius_partial_shipment_plugin.yaml": {
+                "config/routes/sylius_customer_service_plugin.yaml": {
                     "contents": [
-                        "sylius_partial_shipment_admin:",
-                        "    resource: \"@SyliusPartialShipmentPlugin/config/routes/admin_routing.yaml\"",
+                        "sylius_customer_service_admin:",
+                        "    resource: \"@SyliusCustomerServicePlugin/config/routes/admin_routing.yaml\"",
                         "    prefix: '/%sylius_admin.path_name%'",
                         ""
                     ],
                     "executable": false
                 }
             },
-            "ref": "c87e13c08c090ce50be05cdba60f168d15f58bec"
+            "ref": "8a21ad93c8205f020349b43f2d3a67898ff54971"
         }
     }
 }

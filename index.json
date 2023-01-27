@@ -1,16 +1,19 @@
 {
     "aliases": {
+        "customer-service": "sylius/customer-service-plugin",
+        "customerservice": "sylius/customer-service-plugin",
         "loyalty": "sylius/loyalty-plugin",
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin",
-        "partial-shipment": "sylius/partial-shipment-plugin",
-        "partialshipment": "sylius/partial-shipment-plugin",
         "rbac": "sylius/plus-rbac-plugin",
         "return": "sylius/return-plugin",
         "returns": "sylius/return-plugin"
     },
     "recipes": {
+        "sylius/customer-service-plugin": [
+            "0.1"
+        ],
         "sylius/loyalty-plugin": [
             "0.1"
         ],
@@ -19,9 +22,6 @@
         ],
         "sylius/multi-store-plugin": [
             "0.2"
-        ],
-        "sylius/partial-shipment-plugin": [
-            "0.1"
         ],
         "sylius/plus-rbac-plugin": [
             "0.1"

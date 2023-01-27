@@ -1,0 +1,36 @@
+{
+    "manifests": {
+        "sylius/customer-service-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\CustomerServicePlugin\\SyliusCustomerServicePlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_customer_service_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusCustomerServicePlugin/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_customer_service_plugin.yaml": {
+                    "contents": [
+                        "sylius_customer_service_admin:",
+                        "    resource: \"@SyliusCustomerServicePlugin/config/routes/admin_routing.yaml\"",
+                        "    prefix: '/%sylius_admin.path_name%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "8a21ad93c8205f020349b43f2d3a67898ff54971"
+        }
+    }
+}
