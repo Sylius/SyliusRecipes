@@ -1,9 +1,0 @@
-{
-    "aliases": ["partial-shipment"],
-    "bundles": {
-        "Sylius\\PartialShipmentPlugin\\SyliusPartialShipmentPlugin": ["all"]
-    },
-    "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/"
-    }
-}

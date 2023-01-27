@@ -1,0 +1,9 @@
+{
+    "aliases": ["customer-service"],
+    "bundles": {
+        "Sylius\\CustomerServicePlugin\\SyliusCustomerServicePlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
