@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SyliusPriceHistoryPlugin/config/config.yaml" }
