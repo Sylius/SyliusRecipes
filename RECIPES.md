@@ -9,4 +9,5 @@ Additional recipes can be found on the [Contrib Recipes Repository](https://gith
 | [sylius/multi-source-inventory-plugin](https://packagist.org/packages/sylius/multi-source-inventory-plugin) | [0.1](sylius/multi-source-inventory-plugin/0.1) | `multi-source-inventory`, `multisourceinventory` |
 | [sylius/multi-store-plugin](https://packagist.org/packages/sylius/multi-store-plugin) | [0.2](sylius/multi-store-plugin/0.2) | `multistore` |
 | [sylius/plus-rbac-plugin](https://packagist.org/packages/sylius/plus-rbac-plugin) | [0.1](sylius/plus-rbac-plugin/0.1) | `rbac` |
+| [sylius/price-history-plugin](https://packagist.org/packages/sylius/price-history-plugin) | [0.1](sylius/price-history-plugin/0.1) | `price-history`, `pricehistory` |
 | [sylius/return-plugin](https://packagist.org/packages/sylius/return-plugin) | [0.1](sylius/return-plugin/0.1) | `return`, `returns` |

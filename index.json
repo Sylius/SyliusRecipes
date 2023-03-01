@@ -6,6 +6,8 @@
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin",
+        "price-history": "sylius/price-history-plugin",
+        "pricehistory": "sylius/price-history-plugin",
         "rbac": "sylius/plus-rbac-plugin",
         "return": "sylius/return-plugin",
         "returns": "sylius/return-plugin"
@@ -24,6 +26,9 @@
             "0.2"
         ],
         "sylius/plus-rbac-plugin": [
+            "0.1"
+        ],
+        "sylius/price-history-plugin": [
             "0.1"
         ],
         "sylius/return-plugin": [
