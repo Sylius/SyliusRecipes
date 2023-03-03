@@ -1,3 +1,4 @@
+# Remove if you don't use SyliusShopBundle
 sylius_loyalty_shop:
     resource: "@SyliusLoyaltyPlugin/config/shop_routing.yaml"
     prefix: /{_locale}
