@@ -26,13 +26,15 @@
             "0.2"
         ],
         "sylius/plus-rbac-plugin": [
-            "0.1"
+            "0.1",
+            "0.3"
         ],
         "sylius/price-history-plugin": [
             "0.1"
         ],
         "sylius/return-plugin": [
-            "0.1"
+            "0.1",
+            "0.3"
         ]
     },
     "recipe-conflicts": [],

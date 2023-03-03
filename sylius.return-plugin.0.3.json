@@ -28,12 +28,12 @@
                     "contents": [
                         "# Remove if you don't use SyliusAdminBundle",
                         "sylius_return_admin:",
-                        "    resource: \"@SyliusReturnPlugin/config/routes/admin_routing.yaml\"",
+                        "    resource: \"@SyliusReturnPlugin/config/admin_routing.yaml\"",
                         "    prefix: '/%sylius_admin.path_name%'",
                         "",
                         "# Remove if you don't use SyliusShopBundle",
                         "sylius_return_shop:",
-                        "    resource: \"@SyliusReturnPlugin/config/routes/shop_routing.yaml\"",
+                        "    resource: \"@SyliusReturnPlugin/config/shop_routing.yaml\"",
                         "    prefix: /{_locale}",
                         "    requirements:",
                         "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
@@ -42,7 +42,7 @@
                     "executable": false
                 }
             },
-            "ref": "6c0f3bceb6f7d5c163af3030caaded4b68822dd1"
+            "ref": "97dee871054374844937752fb374f98dd7aafafc"
         }
     }
 }

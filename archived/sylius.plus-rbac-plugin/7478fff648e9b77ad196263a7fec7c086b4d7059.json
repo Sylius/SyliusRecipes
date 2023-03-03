@@ -1,9 +1,9 @@
 {
     "manifests": {
-        "sylius/multi-source-inventory-plugin": {
+        "sylius/plus-rbac-plugin": {
             "manifest": {
                 "bundles": {
-                    "Sylius\\MultiSourceInventoryPlugin\\SyliusMultiSourceInventoryPlugin": [
+                    "Sylius\\PlusRbacPlugin\\SyliusPlusRbacPlugin": [
                         "all"
                     ]
                 },
@@ -12,26 +12,26 @@
                 }
             },
             "files": {
-                "config/packages/sylius_multi_source_inventory_plugin.yaml": {
+                "config/packages/sylius_plus_rbac_plugin.yaml": {
                     "contents": [
                         "imports:",
-                        "    - { resource: \"@SyliusMultiSourceInventoryPlugin/config/config.yaml\" }",
+                        "    - { resource: \"@SyliusPlusRbacPlugin/config/config.yaml\" }",
                         ""
                     ],
                     "executable": false
                 },
-                "config/routes/sylius_multi_source_inventory_plugin.yaml": {
+                "config/routes/sylius_plus_rbac_plugin.yaml": {
                     "contents": [
                         "# Remove if you don't use SyliusAdminBundle",
-                        "sylius_multi_source_inventory_admin:",
-                        "    resource: \"@SyliusMultiSourceInventoryPlugin/config/admin_routing.yaml\"",
+                        "sylius_plus_rbac_admin:",
+                        "    resource: \"@SyliusPlusRbacPlugin/config/admin_routing.yaml\"",
                         "    prefix: '/%sylius_admin.path_name%'",
                         ""
                     ],
                     "executable": false
                 }
             },
-            "ref": "006ddc7123fe175c92fa000c554a92bca4b8f845"
+            "ref": "7478fff648e9b77ad196263a7fec7c086b4d7059"
         }
     }
 }
