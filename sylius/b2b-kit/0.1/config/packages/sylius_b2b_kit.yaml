@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SyliusB2BKitPlugin/config/plugins/config.yaml" }
