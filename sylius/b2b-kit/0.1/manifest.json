@@ -6,7 +6,7 @@
         "BitBag\\SyliusWishlistPlugin\\BitBagSyliusWishlistPlugin::class": ["all"],
         "FOS\\ElasticaBundle\\FOSElasticaBundle::class": ["all"],
         "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin::class": ["all"],
-        "FOS\\JsRoutingBundle\\FOSJsRoutingBundle::class": ["all"],
+        "FOS\\JsRoutingBundle\\FOSJsRoutingBundle::class": ["all"]
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
