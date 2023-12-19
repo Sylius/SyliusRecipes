@@ -7,7 +7,6 @@
         "FOS\\ElasticaBundle\\FOSElasticaBundle::class": ["all"],
         "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin::class": ["all"],
         "FOS\\JsRoutingBundle\\FOSJsRoutingBundle::class": ["all"],
-        "Sylius\\OnePageCheckoutPlugin\\SyliusOnePageCheckoutPlugin::class": ["all"]
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
