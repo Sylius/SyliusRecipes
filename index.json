@@ -35,6 +35,9 @@
         "sylius/return-plugin": [
             "0.1",
             "0.3"
+        ],
+        "sylius/state-machine-abstraction": [
+            "1.13.0"
         ]
     },
     "recipe-conflicts": [],
