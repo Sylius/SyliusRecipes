@@ -1,0 +1,5 @@
+{
+    "bundles": {
+        "Sylius\\Abstraction\\StateMachine\\SyliusStateMachineAbstractionBundle": ["all"]
+    }
+}
