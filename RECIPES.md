@@ -12,3 +12,4 @@ Additional recipes can be found on the [Contrib Recipes Repository](https://gith
 | [sylius/price-history-plugin](https://packagist.org/packages/sylius/price-history-plugin) | [0.1](sylius/price-history-plugin/0.1) | `price-history`, `pricehistory` |
 | [sylius/return-plugin](https://packagist.org/packages/sylius/return-plugin) | [0.3](sylius/return-plugin/0.3) | `return`, `returns` |
 | [sylius/state-machine-abstraction](https://packagist.org/packages/sylius/state-machine-abstraction) | [1.13](sylius/state-machine-abstraction/1.13) |  |
+| [sylius/sylius](https://packagist.org/packages/sylius/sylius) | [1.13](sylius/sylius/1.13) |  |

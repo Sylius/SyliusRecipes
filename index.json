@@ -38,6 +38,9 @@
         ],
         "sylius/state-machine-abstraction": [
             "1.13"
+        ],
+        "sylius/sylius": [
+            "1.13"
         ]
     },
     "recipe-conflicts": [],

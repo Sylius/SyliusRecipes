@@ -1,0 +1,15 @@
+{
+    "manifests": {
+        "sylius/sylius": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\Abstraction\\StateMachine\\SyliusStateMachineAbstractionBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "files": [],
+            "ref": "d538f7c966e2d796543c3be72cb65072bf74504e"
+        }
+    }
+}
