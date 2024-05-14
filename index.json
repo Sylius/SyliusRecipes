@@ -1,5 +1,9 @@
 {
     "aliases": {
+        "b2b-kit": "sylius/b2b-kit",
+        "b2b-suite": "sylius/b2b-kit",
+        "b2bkit": "sylius/b2b-kit",
+        "b2bsuite": "sylius/b2b-kit",
         "customer-service": "sylius/customer-service-plugin",
         "customerservice": "sylius/customer-service-plugin",
         "loyalty": "sylius/loyalty-plugin",
@@ -13,6 +17,9 @@
         "returns": "sylius/return-plugin"
     },
     "recipes": {
+        "sylius/b2b-kit": [
+            "0.1"
+        ],
         "sylius/customer-service-plugin": [
             "0.1"
         ],

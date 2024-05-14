@@ -1,0 +1,50 @@
+{
+    "manifests": {
+        "sylius/b2b-kit": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\B2BKit\\SyliusB2BKitPlugin": [
+                        "all"
+                    ],
+                    "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": [
+                        "all"
+                    ],
+                    "BitBag\\SyliusWishlistPlugin\\BitBagSyliusWishlistPlugin": [
+                        "all"
+                    ],
+                    "FOS\\ElasticaBundle\\FOSElasticaBundle": [
+                        "all"
+                    ],
+                    "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": [
+                        "all"
+                    ],
+                    "FOS\\JsRoutingBundle\\FOSJsRoutingBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusB2BKitPlugin/config/plugins/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "sylius_b2b_suite:",
+                        "    resource: \"@SyliusB2BKitPlugin/config/routes/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "a4b6e306a0188efc7d8e7ad42e74b29abeca1c05"
+        }
+    }
+}
