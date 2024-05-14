@@ -1,7 +1,7 @@
 {
-    "aliases": ["one-page-checkout-plugin"],
+    "aliases": ["one-page-checkout"],
     "bundles": {
-        "Sylius\\OnePageCheckoutPlugin\\SyliusOnePageCheckoutPlugin::class": ["all"]
+        "Sylius\\OnePageCheckoutPlugin\\SyliusOnePageCheckoutPlugin": ["all"]
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
