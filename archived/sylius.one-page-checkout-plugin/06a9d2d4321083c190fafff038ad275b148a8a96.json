@@ -1,0 +1,52 @@
+{
+    "manifests": {
+        "sylius/one-page-checkout-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\OnePageCheckoutPlugin\\SyliusOnePageCheckoutPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_one_page_checkout_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusOnePageCheckoutPlugin/config/config.yml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_one_page_checkout_plugin.yaml": {
+                    "contents": [
+                        "sylius_one_page_checkout:",
+                        "    resource: \"@SyliusOnePageCheckoutPlugin/config/routing.yml\"",
+                        "    prefix: /{_locale}",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        "",
+                        "sylius_shop_checkout:",
+                        "    resource: \"@SyliusShopBundle/Resources/config/routing/checkout.yml\"",
+                        "    condition: false",
+                        "",
+                        "sylius_shop_checkout_complete:",
+                        "    path: /{_locale}/checkout",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        "",
+                        "sylius_shop_checkout_start:",
+                        "    path: /{_locale}/checkout",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "06a9d2d4321083c190fafff038ad275b148a8a96"
+        }
+    }
+}

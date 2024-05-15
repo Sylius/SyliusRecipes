@@ -10,6 +10,8 @@
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin",
+        "one-page-checkout": "sylius/one-page-checkout-plugin",
+        "onepagecheckout": "sylius/one-page-checkout-plugin",
         "price-history": "sylius/price-history-plugin",
         "pricehistory": "sylius/price-history-plugin",
         "rbac": "sylius/plus-rbac-plugin",
@@ -31,6 +33,9 @@
         ],
         "sylius/multi-store-plugin": [
             "0.2"
+        ],
+        "sylius/one-page-checkout-plugin": [
+            "0.1"
         ],
         "sylius/plus-rbac-plugin": [
             "0.1",
