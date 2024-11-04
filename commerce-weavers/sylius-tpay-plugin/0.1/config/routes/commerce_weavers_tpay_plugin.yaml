@@ -1,7 +1,7 @@
-commerce_weavers_tpay_webhook:
+commerce_weavers_sylius_tpay_webhook:
     resource: "@CommerceWeaversSyliusTpayPlugin/config/routes_webhook.php"
 
-commerce_weavers_tpay_shop:
+commerce_weavers_sylius_tpay_shop:
     resource: "@CommerceWeaversSyliusTpayPlugin/config/routes_shop.php"
     prefix: /{_locale}
     requirements:
