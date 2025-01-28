@@ -1,0 +1,9 @@
+{
+    "aliases": ["marketplace", "marketplace-plugin", "marketplace-suite", "marketplace-suite-plugin"],
+    "bundles": {
+        "Sylius\\MarketplaceSuite\\SyliusMarketplaceSuitePlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}

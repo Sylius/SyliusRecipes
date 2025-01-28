@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SyliusMarketplaceSuitePlugin/config/config.yaml" }
