@@ -7,6 +7,13 @@
         "customer-service": "sylius/customer-service-plugin",
         "customerservice": "sylius/customer-service-plugin",
         "loyalty": "sylius/loyalty-plugin",
+        "marketplace": "sylius/plus-marketplace-suite-plugin",
+        "marketplace-plugin": "sylius/plus-marketplace-suite-plugin",
+        "marketplace-suite": "sylius/plus-marketplace-suite-plugin",
+        "marketplace-suite-plugin": "sylius/plus-marketplace-suite-plugin",
+        "marketplaceplugin": "sylius/plus-marketplace-suite-plugin",
+        "marketplacesuite": "sylius/plus-marketplace-suite-plugin",
+        "marketplacesuiteplugin": "sylius/plus-marketplace-suite-plugin",
         "multi-source-inventory": "sylius/multi-source-inventory-plugin",
         "multisourceinventory": "sylius/multi-source-inventory-plugin",
         "multistore": "sylius/multi-store-plugin",
@@ -36,6 +43,9 @@
         ],
         "sylius/one-page-checkout-plugin": [
             "0.1"
+        ],
+        "sylius/plus-marketplace-suite-plugin": [
+            "2.8"
         ],
         "sylius/plus-rbac-plugin": [
             "0.1",
