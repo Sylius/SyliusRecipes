@@ -21,6 +21,58 @@
             "position": "after_target",
             "target": "    access_control:",
             "warn_if_missing": true
+        },
+        {
+            "file": "config/packages/assets.yaml",
+            "content": "            marketplace_suite_shop:\n                json_manifest_path: '%kernel.project_dir%/public/build/sylius/marketplacesuite/shop/manifest.json'\n            marketplace_suite_admin:\n                json_manifest_path: '%kernel.project_dir%/public/build/sylius/marketplacesuite/admin/manifest.json'",
+            "position": "after_target",
+            "target": "        packages:",
+            "warn_if_missing": true
+        },
+        {
+            "file": "config/packages/webpack_encore.yaml",
+            "content": "        marketplace_suite_shop: '%kernel.project_dir%/public/build/sylius/marketplacesuite/shop'\n        marketplace_suite_admin: '%kernel.project_dir%/public/build/sylius/marketplacesuite/admin'",
+            "position": "after_target",
+            "target": "    builds:",
+            "warn_if_missing": true
+        },
+        {
+            "file": "webpack.config.js",
+            "content": "const [syliusMarketplaceSuiteShop, syliusMarketplaceSuiteAdmin] = require('./vendor/sylius/plus-marketplace-suite-plugin/webpack.config');",
+            "position": "after_target",
+            "target": "const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/private/');",
+            "warn_if_missing": true
+        },
+        {
+            "file": "webpack.config.js",
+            "content": "const baseExports = module.exports;\nmodule.exports = [...baseExports, syliusMarketplaceSuiteShop, syliusMarketplaceSuiteAdmin];",
+            "position": "after_target",
+            "target": "module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusShopBundle/_scripts.html.twig",
+            "content": "{{ encore_entry_script_tags('sylius-marketplacesuite-shop', null, 'marketplace_suite_shop') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusShopBundle/_styles.html.twig",
+            "content": "{{ encore_entry_link_tags('sylius-marketplacesuite-shop', null, 'marketplace_suite_shop') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusAdminBundle/_scripts.html.twig",
+            "content": "{{ encore_entry_script_tags('sylius-marketplacesuite-admin', null, 'marketplace_suite_admin') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusAdminBundle/_styles.html.twig",
+            "content": "{{ encore_entry_link_tags('sylius-marketplacesuite-admin', null, 'marketplace_suite_admin') }}",
+            "position": "bottom",
+            "warn_if_missing": true
         }
     ]
 }
