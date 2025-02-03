@@ -1,9 +1,26 @@
 {
-    "aliases": ["marketplace", "marketplace-plugin", "marketplace-suite", "marketplace-suite-plugin"],
+    "aliases": [
+        "marketplace",
+        "marketplace-plugin",
+        "marketplace-suite",
+        "marketplace-suite-plugin"
+    ],
     "bundles": {
-        "Sylius\\MarketplaceSuite\\SyliusMarketplaceSuitePlugin": ["all"]
+        "Sylius\\MarketplaceSuite\\SyliusMarketplaceSuitePlugin": [
+            "all"
+        ]
     },
     "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/"
-    }
+        "config/": "%CONFIG_DIR%/",
+        "src/": "%SRC_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "config/packages/security.yaml",
+            "content": "        - { path: \"%sylius.security.shop_regex%/account/vendor/conversations/create\", role: ROLE_USER }\n        - { path: \"%sylius.security.shop_regex%/account/vendor/conversations\", role: ROLE_USER }\n        - { path: \"%sylius.security.shop_regex%/account/vendor/register\", role: ROLE_USER }\n        - { path: \"%sylius.security.shop_regex%/account/vendor\", role: ROLE_VENDOR }\n        - { path: \"%sylius.security.shop_regex%/account\", role: ROLE_USER }\n\n        - { path: \"%sylius.security.new_api_user_account_vendor_regex%/register\", role: ROLE_USER }\n        - { path: \"%sylius.security.new_api_user_account_vendor_regex%\", role: ROLE_VENDOR }",
+            "position": "after_target",
+            "target": "    access_control:",
+            "warn_if_missing": true
+        }
+    ]
 }
