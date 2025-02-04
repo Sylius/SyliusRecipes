@@ -1,0 +1,66 @@
+{
+    "aliases": ["b2b-suite", "b2b-kit"],
+    "bundles": {
+        "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": ["all"],
+        "BitBag\\SyliusWishlistPlugin\\BitBagSyliusWishlistPlugin": ["all"],
+        "FOS\\ElasticaBundle\\FOSElasticaBundle": ["all"],
+        "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": ["all"],
+        "FOS\\JsRoutingBundle\\FOSJsRoutingBundle": ["all"],
+        "Sylius\\B2BKit\\SyliusB2BKitPlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/",
+        "src/": "%SRC_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "config/packages/webpack_encore.yaml",
+            "content": "        sylius-b2b-kit-shop: '%kernel.project_dir%/public/build/sylius/b2b-kit/shop'\n        sylius-b2b-kit-admin: '%kernel.project_dir%/public/build/sylius/b2b-kit/admin'",
+            "position": "after_target",
+            "target": "    builds:",
+            "warn_if_missing": true
+        },
+        {
+            "file": "webpack.config.js",
+            "content": "const [syliusB2BKitShop, syliusB2BKitAdmin] = require('./vendor/sylius/b2b-kit/webpack.config');",
+            "position": "after_target",
+            "target": "const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/private/');",
+            "warn_if_missing": true
+        },
+        {
+            "file": "webpack.config.js",
+            "content": "const baseExports = module.exports;\nmodule.exports = [...baseExports, syliusB2BKitShop, syliusB2BKitAdmin];",
+            "position": "after_target",
+            "target": "module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusAdminBundle/_scripts.html.twig",
+            "content": "{{ encore_entry_script_tags('sylius-b2b-kit-admin', null, 'sylius-b2b-kit-admin') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusAdminBundle/_styles.html.twig",
+            "content": "{{ encore_entry_link_tags('sylius-b2b-kit-admin', null, 'sylius-b2b-kit-admin') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusShopBundle/_scripts.html.twig",
+            "content": "{{ encore_entry_script_tags('sylius-b2b-kit-shop', null, 'sylius-b2b-kit-shop') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        },
+        {
+            "file": "templates/bundles/SyliusShopBundle/_styles.html.twig",
+            "content": "{{ encore_entry_link_tags('sylius-b2b-kit-shop', null, 'sylius-b2b-kit-shop') }}",
+            "position": "bottom",
+            "warn_if_missing": true
+        }
+    ],
+    "env": {
+        "CUSTOMER_GROUP_PRICING_PRIORITY": "10",
+        "ORGANIZATION_PRICING_PRIORITY": "20"
+    }
+}
