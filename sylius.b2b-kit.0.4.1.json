@@ -1,0 +1,151 @@
+{
+    "manifests": {
+        "sylius/b2b-kit": {
+            "manifest": {
+                "bundles": {
+                    "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": [
+                        "all"
+                    ],
+                    "BitBag\\SyliusWishlistPlugin\\BitBagSyliusWishlistPlugin": [
+                        "all"
+                    ],
+                    "FOS\\ElasticaBundle\\FOSElasticaBundle": [
+                        "all"
+                    ],
+                    "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": [
+                        "all"
+                    ],
+                    "FOS\\JsRoutingBundle\\FOSJsRoutingBundle": [
+                        "all"
+                    ],
+                    "Sylius\\B2BKit\\SyliusB2BKitPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "config/packages/webpack_encore.yaml",
+                        "content": "        sylius-b2b-kit-shop: '%kernel.project_dir%/public/build/sylius/b2b-kit/shop'\n        sylius-b2b-kit-admin: '%kernel.project_dir%/public/build/sylius/b2b-kit/admin'",
+                        "position": "after_target",
+                        "target": "    builds:",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "webpack.config.js",
+                        "content": "const [syliusB2BKitShop, syliusB2BKitAdmin] = require('./vendor/sylius/b2b-kit/webpack.config');",
+                        "position": "after_target",
+                        "target": "const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/private/');",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "webpack.config.js",
+                        "content": "const baseExports = module.exports;\nmodule.exports = [...baseExports, syliusB2BKitShop, syliusB2BKitAdmin];",
+                        "position": "after_target",
+                        "target": "module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "templates/bundles/SyliusAdminBundle/_scripts.html.twig",
+                        "content": "{{ encore_entry_script_tags('sylius-b2b-kit-admin', null, 'sylius-b2b-kit-admin') }}",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "templates/bundles/SyliusAdminBundle/_styles.html.twig",
+                        "content": "{{ encore_entry_link_tags('sylius-b2b-kit-admin', null, 'sylius-b2b-kit-admin') }}",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "templates/bundles/SyliusShopBundle/_scripts.html.twig",
+                        "content": "{{ encore_entry_script_tags('sylius-b2b-kit-shop', null, 'sylius-b2b-kit-shop') }}",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "templates/bundles/SyliusShopBundle/_styles.html.twig",
+                        "content": "{{ encore_entry_link_tags('sylius-b2b-kit-shop', null, 'sylius-b2b-kit-shop') }}",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ],
+                "env": {
+                    "CUSTOMER_GROUP_PRICING_PRIORITY": "10",
+                    "ORGANIZATION_PRICING_PRIORITY": "20"
+                }
+            },
+            "files": {
+                "config/packages/_sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusB2BKitPlugin/config/plugins/config.yaml\" }",
+                        "",
+                        "sylius_addressing:",
+                        "    resources:",
+                        "        address:",
+                        "            classes:",
+                        "                repository: Sylius\\B2BKit\\Repository\\AddressRepository",
+                        "",
+                        "sylius_customer:",
+                        "    resources:",
+                        "        customer:",
+                        "            classes:",
+                        "                repository: Sylius\\B2BKit\\Repository\\CustomerRepository",
+                        "        customer_group:",
+                        "            classes:",
+                        "                repository: Sylius\\B2BKit\\Repository\\CustomerGroupRepository",
+                        "",
+                        "sylius_order:",
+                        "    resources:",
+                        "        order:",
+                        "            classes:",
+                        "                repository: Sylius\\B2BKit\\Repository\\OrderRepository",
+                        "",
+                        "sylius_user:",
+                        "    resources:",
+                        "        shop:",
+                        "            user:",
+                        "                classes:",
+                        "                    repository: Sylius\\B2BKit\\Repository\\UserRepository",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/fos_elastica.yaml": {
+                    "contents": [
+                        "imports:",
+                        "  - { resource: '@SyliusB2BKitPlugin/config/indexes/*' }",
+                        "",
+                        "parameters:",
+                        "  bitbag_es_pagination_available_page_limits: [9, 18, 36]",
+                        "  bitbag_es_pagination_default_limit: 9",
+                        "  bitbag_es_fuzziness: AUTO",
+                        "",
+                        "twig:",
+                        "  globals:",
+                        "    bitbag_es_pagination_available_page_limits: \"%bitbag_es_pagination_available_page_limits%\"",
+                        "",
+                        "fos_elastica:",
+                        "  clients:",
+                        "    default: { url: '%env(ELASTICSEARCH_URL)%' }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "sylius_b2b_suite:",
+                        "    resource: \"@SyliusB2BKitPlugin/config/routes/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6836b965fb146875d6f2d9c60189da7554d36cf5"
+        }
+    }
+}

@@ -4,7 +4,7 @@ Additional recipes can be found on the [Contrib Recipes Repository](https://gith
 
 | Package | Latest Recipe | Aliases |
 | --- | --- | --- |
-| [sylius/b2b-kit](https://packagist.org/packages/sylius/b2b-kit) | [0.1](sylius/b2b-kit/0.1) | `b2b-kit`, `b2b-suite`, `b2bkit`, `b2bsuite` |
+| [sylius/b2b-kit](https://packagist.org/packages/sylius/b2b-kit) | [0.4.1](sylius/b2b-kit/0.4.1) | `b2b-kit`, `b2b-suite`, `b2bkit`, `b2bsuite` |
 | [sylius/customer-service-plugin](https://packagist.org/packages/sylius/customer-service-plugin) | [0.1](sylius/customer-service-plugin/0.1) | `customer-service`, `customerservice` |
 | [sylius/loyalty-plugin](https://packagist.org/packages/sylius/loyalty-plugin) | [0.1](sylius/loyalty-plugin/0.1) | `loyalty` |
 | [sylius/multi-source-inventory-plugin](https://packagist.org/packages/sylius/multi-source-inventory-plugin) | [0.1](sylius/multi-source-inventory-plugin/0.1) | `multi-source-inventory`, `multisourceinventory` |
