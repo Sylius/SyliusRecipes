@@ -1,0 +1,62 @@
+{
+    "manifests": {
+        "sylius/return-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\ReturnPlugin\\SyliusReturnPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "assets/admin/entrypoint.js",
+                        "content": "import '../../vendor/sylius/return-plugin/assets/admin/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/shop/entrypoint.js",
+                        "content": "import '../../vendor/sylius/return-plugin/assets/shop/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "config/packages/sylius_return_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusReturnPlugin/config/config.yaml\" }",
+                        "",
+                        "sylius_return:",
+                        "    pdf_generator:",
+                        "        enabled: true",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_return_plugin.yaml": {
+                    "contents": [
+                        "# Remove if you don't use SyliusAdminBundle",
+                        "sylius_return_admin:",
+                        "    resource: \"@SyliusReturnPlugin/config/admin_routing.yaml\"",
+                        "    prefix: '/%sylius_admin.path_name%'",
+                        "",
+                        "# Remove if you don't use SyliusShopBundle",
+                        "sylius_return_shop:",
+                        "    resource: \"@SyliusReturnPlugin/config/shop_routing.yaml\"",
+                        "    prefix: /{_locale}",
+                        "    requirements:",
+                        "        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6015a7354925bcbcc3c18483b312ddffe33cb0cf"
+        }
+    }
+}

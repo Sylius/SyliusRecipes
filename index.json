@@ -31,16 +31,20 @@
             "0.4.1"
         ],
         "sylius/customer-service-plugin": [
-            "0.1"
+            "0.1",
+            "2.0"
         ],
         "sylius/loyalty-plugin": [
-            "0.1"
+            "0.1",
+            "2.0"
         ],
         "sylius/multi-source-inventory-plugin": [
-            "0.1"
+            "0.1",
+            "2.0"
         ],
         "sylius/multi-store-plugin": [
-            "0.2"
+            "0.2",
+            "2.0"
         ],
         "sylius/one-page-checkout-plugin": [
             "0.1"
@@ -50,14 +54,16 @@
         ],
         "sylius/plus-rbac-plugin": [
             "0.1",
-            "0.3"
+            "0.3",
+            "2.0"
         ],
         "sylius/price-history-plugin": [
             "0.1"
         ],
         "sylius/return-plugin": [
             "0.1",
-            "0.3"
+            "0.3",
+            "2.0"
         ],
         "sylius/state-machine-abstraction": [
             "1.13"
