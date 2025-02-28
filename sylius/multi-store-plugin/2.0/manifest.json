@@ -1,0 +1,17 @@
+{
+    "aliases": ["multistore"],
+    "bundles": {
+        "Sylius\\MultiStorePlugin\\SyliusMultiStorePlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/admin/entrypoint.js",
+            "content": "import '../../vendor/sylius/multi-store-plugin/assets/admin/entrypoint';",
+            "position": "bottom",
+            "warn_if_missing": true
+        }
+    ]
+}

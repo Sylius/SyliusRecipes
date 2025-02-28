@@ -1,0 +1,6 @@
+imports:
+    - { resource: "@SyliusReturnPlugin/config/config.yaml" }
+
+sylius_return:
+    pdf_generator:
+        enabled: true
