@@ -1,0 +1,17 @@
+{
+    "aliases": ["rbac"],
+    "bundles": {
+        "Sylius\\PlusRbacPlugin\\SyliusPlusRbacPlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/admin/entrypoint.js",
+            "content": "import '../../vendor/sylius/plus-rbac-plugin/assets/admin/entrypoint';",
+            "position": "top",
+            "warn_if_missing": true
+        }
+    ]
+}

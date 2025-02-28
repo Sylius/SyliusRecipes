@@ -1,0 +1,17 @@
+{
+    "aliases": ["multi-source-inventory"],
+    "bundles": {
+        "Sylius\\MultiSourceInventoryPlugin\\SyliusMultiSourceInventoryPlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/admin/entrypoint.js",
+            "content": "import '../../vendor/sylius/multi-source-inventory-plugin/assets/admin/entrypoint';",
+            "position": "bottom",
+            "warn_if_missing": true
+        }
+    ]
+}

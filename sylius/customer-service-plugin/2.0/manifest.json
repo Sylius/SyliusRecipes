@@ -1,0 +1,17 @@
+{
+    "aliases": ["customer-service"],
+    "bundles": {
+        "Sylius\\CustomerServicePlugin\\SyliusCustomerServicePlugin": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/admin/entrypoint.js",
+            "content": "import '../../vendor/sylius/customer-service-plugin/assets/admin/entrypoint';",
+            "position": "bottom",
+            "warn_if_missing": true
+        }
+    ]
+}
