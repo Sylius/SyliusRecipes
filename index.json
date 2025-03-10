@@ -28,7 +28,8 @@
     "recipes": {
         "sylius/b2b-kit": [
             "0.1",
-            "0.4.1"
+            "0.4.1",
+            "2.0"
         ],
         "sylius/customer-service-plugin": [
             "0.1",
