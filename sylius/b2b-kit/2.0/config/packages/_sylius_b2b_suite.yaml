@@ -1,5 +1,5 @@
 imports:
-    - { resource: "@SyliusB2BKitPlugin/config/plugins/config.yaml" }
+    - { resource: "@SyliusB2BKitPlugin/config/config.yaml" }
 
 sylius_addressing:
     resources:
