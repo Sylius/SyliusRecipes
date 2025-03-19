@@ -24,15 +24,27 @@
         },
         {
             "file": "assets/admin/entrypoint.js",
-            "content": "import '@vendor/sylius/b2b-kit/assets/admin/entrypoint';",
+            "content": "import '@vendor/sylius/plus-marketplace-suite-plugin/assets/admin/entrypoint';",
             "position": "bottom",
             "warn_if_missing": true
         },
         {
             "file": "assets/shop/entrypoint.js",
-            "content": "import '@vendor/sylius/b2b-kit/assets/shop/entrypoint';",
+            "content": "import '@vendor/sylius/plus-marketplace-suite-plugin/assets/shop/entrypoint';",
             "position": "bottom",
             "warn_if_missing": true
         }
-    ]
+    ],
+    "env": {
+        "VENDOR_PRODUCTS_LIMITS": "9,18,27",
+        "DEFAULT_VENDOR_PRODUCTS_LIMIT": "9",
+        "LOGO_DIRECTORY": "media/image/logo/",
+        "ADMIN_ATTACHMENTS_UPLOAD_DIRECTORY": "uploads/attachments",
+        "MESSAGES_FILE_UPLOAD_DIRECTORY": "uploads/message_files",
+        "VENDOR_B2B_REGISTRATION": "0",
+        "DEFAULT_VENDOR_LISTING_AUTO_VERIFY": "0",
+        "VENDOR_PROFILE_AUTO_ACCEPTANCE": "0",
+        "DEFAULT_VENDOR_COMMISSION": "10",
+        "DEFAULT_VENDOR_COMMISSION_TYPE": "gross"
+    }
 }
