@@ -51,7 +51,8 @@
             "0.1"
         ],
         "sylius/plus-marketplace-suite-plugin": [
-            "2.8"
+            "2.8",
+            "3.0"
         ],
         "sylius/plus-rbac-plugin": [
             "0.1",
