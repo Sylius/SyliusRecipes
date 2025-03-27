@@ -33,6 +33,12 @@
             "content": "import '@vendor/sylius/plus-marketplace-suite-plugin/assets/shop/entrypoint';",
             "position": "bottom",
             "warn_if_missing": true
+        },
+        {
+            "file": "config/routes.yaml",
+            "content": "sylius_marketplace_suite:\n    resource: \"@SyliusMarketplaceSuitePlugin/config/routes.yaml\"",
+            "position": "bottom",
+            "warn_if_missing": true
         }
     ],
     "env": {
