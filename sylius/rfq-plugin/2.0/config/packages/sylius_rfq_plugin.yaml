@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SyliusRfqPlugin/config/config.yaml" }
