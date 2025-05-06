@@ -29,7 +29,8 @@
         "sylius/b2b-kit": [
             "0.1",
             "0.4.1",
-            "2.0"
+            "2.0",
+            "2.1"
         ],
         "sylius/customer-service-plugin": [
             "0.1",
