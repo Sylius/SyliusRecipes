@@ -23,7 +23,8 @@
         "pricehistory": "sylius/price-history-plugin",
         "rbac": "sylius/plus-rbac-plugin",
         "return": "sylius/return-plugin",
-        "returns": "sylius/return-plugin"
+        "returns": "sylius/return-plugin",
+        "rfq": "sylius/rfq-plugin"
     },
     "recipes": {
         "sylius/b2b-kit": [
@@ -66,6 +67,10 @@
         "sylius/return-plugin": [
             "0.1",
             "0.3",
+            "2.0"
+        ],
+        "sylius/rfq-plugin": [
+            "1.0",
             "2.0"
         ],
         "sylius/state-machine-abstraction": [

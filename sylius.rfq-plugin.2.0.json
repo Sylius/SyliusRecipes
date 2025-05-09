@@ -1,0 +1,35 @@
+{
+    "manifests": {
+        "sylius/rfq-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\RfqPlugin\\SyliusRfqPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sylius_rfq_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusRfqPlugin/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_rfq_plugin.yaml": {
+                    "contents": [
+                        "sylius_rfq:",
+                        "    resource: \"@SyliusRfqPlugin/config/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "71947a893204dfb5b6e5ed0ab282352ef27eebe4"
+        }
+    }
+}
