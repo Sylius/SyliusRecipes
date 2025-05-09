@@ -1,0 +1,2 @@
+sylius_rfq:
+    resource: "@SyliusRfqPlugin/config/routes.yaml"
