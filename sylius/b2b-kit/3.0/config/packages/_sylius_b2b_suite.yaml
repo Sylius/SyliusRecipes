@@ -1,0 +1,20 @@
+imports:
+    - { resource: "@SyliusB2BKitPlugin/config/config.yaml" }
+
+sylius_addressing:
+    resources:
+        address:
+            classes:
+                repository: App\Repository\AddressRepository
+
+sylius_customer:
+    resources:
+        customer:
+            classes:
+                repository: App\Repository\CustomerRepository
+
+sylius_order:
+    resources:
+        order:
+            classes:
+                repository: App\Repository\OrderRepository
