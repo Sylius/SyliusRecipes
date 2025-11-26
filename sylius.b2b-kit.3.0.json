@@ -1,0 +1,168 @@
+{
+    "manifests": {
+        "sylius/b2b-kit": {
+            "manifest": {
+                "bundles": {
+                    "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": [
+                        "all"
+                    ],
+                    "FOS\\ElasticaBundle\\FOSElasticaBundle": [
+                        "all"
+                    ],
+                    "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": [
+                        "all"
+                    ],
+                    "Sylius\\B2BKit\\SyliusB2BKitPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "assets/admin/entrypoint.js",
+                        "content": "import '@vendor/sylius/b2b-kit/assets/admin/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/shop/entrypoint.js",
+                        "content": "import '@vendor/sylius/b2b-kit/assets/shop/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/services.yaml",
+                        "content": "    sylius.repository.product:\n        class: App\\Repository\\ProductRepository\n        public: true\n        arguments:\n            - \"@doctrine.orm.entity_manager\"\n            - \"@=service('doctrine.orm.entity_manager').getClassMetadata(parameter('sylius.model.product.class'))\"\n            - \"@sylius_b2b.checker.product_visibility_filtering\"\n            - \"@sylius.context.customer\"",
+                        "position": "after_target",
+                        "target": "services:",
+                        "warn_if_missing": true
+                    }
+                ],
+                "env": {
+                    "CUSTOMER_GROUP_PRICING_PRIORITY": "10",
+                    "ORGANIZATION_PRICING_PRIORITY": "20"
+                }
+            },
+            "files": {
+                "config/packages/_sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusB2BKitPlugin/config/config.yaml\" }",
+                        "",
+                        "sylius_addressing:",
+                        "    resources:",
+                        "        address:",
+                        "            classes:",
+                        "                repository: App\\Repository\\AddressRepository",
+                        "",
+                        "sylius_customer:",
+                        "    resources:",
+                        "        customer:",
+                        "            classes:",
+                        "                repository: App\\Repository\\CustomerRepository",
+                        "",
+                        "sylius_order:",
+                        "    resources:",
+                        "        order:",
+                        "            classes:",
+                        "                repository: App\\Repository\\OrderRepository",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_b2b_suite.yaml": {
+                    "contents": [
+                        "sylius_b2b_suite:",
+                        "    resource: \"@SyliusB2BKitPlugin/config/routes/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Repository/AddressRepository.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Repository;",
+                        "",
+                        "use Sylius\\B2BKit\\Organization\\Repository\\AddressRepositoryInterface as B2BKitAddressRepositoryInterface;",
+                        "use Sylius\\B2BKit\\Organization\\Repository\\AddressRepositoryTrait as B2BKitAddressRepositoryTrait;",
+                        "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\AddressRepository as BaseAddressRepository;",
+                        "",
+                        "class AddressRepository extends BaseAddressRepository implements B2BKitAddressRepositoryInterface",
+                        "{",
+                        "    use B2BKitAddressRepositoryTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Repository/CustomerRepository.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Repository;",
+                        "",
+                        "use Sylius\\B2BKit\\Organization\\Repository\\CustomerRepositoryInterface as B2BKitCustomerRepositoryInterface;",
+                        "use Sylius\\B2BKit\\Organization\\Repository\\CustomerRepositoryTrait as B2BKitCustomerRepositoryTrait;",
+                        "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\CustomerRepository as BaseCustomerRepository;",
+                        "",
+                        "class CustomerRepository extends BaseCustomerRepository implements B2BKitCustomerRepositoryInterface",
+                        "{",
+                        "    use B2BKitCustomerRepositoryTrait;",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Repository/ProductRepository.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Repository;",
+                        "",
+                        "use Doctrine\\ORM\\EntityManagerInterface;",
+                        "use Doctrine\\ORM\\Mapping\\ClassMetadata;",
+                        "use Doctrine\\ORM\\QueryBuilder;",
+                        "use Sylius\\B2BKit\\Organization\\Checker\\ProductVisibilityFilteringCheckerInterface as B2BKitProductVisibilityFilteringCheckerInterface;",
+                        "use Sylius\\B2BKit\\Organization\\Doctrine\\ORM\\CreateProductQueryBuilderTrait as B2BKitCreateProductQueryBuilderTrait;",
+                        "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\ProductRepository as BaseProductRepository;",
+                        "use Sylius\\Component\\Customer\\Context\\CustomerContextInterface;",
+                        "",
+                        "class ProductRepository extends BaseProductRepository",
+                        "{",
+                        "    use B2BKitCreateProductQueryBuilderTrait;",
+                        "",
+                        "    public function __construct(",
+                        "        EntityManagerInterface $entityManager,",
+                        "        ClassMetadata $class,",
+                        "        protected B2BKitProductVisibilityFilteringCheckerInterface $productVisibilityFilteringChecker,",
+                        "        protected CustomerContextInterface $customerContext,",
+                        "    ) {",
+                        "        parent::__construct($entityManager, $class);",
+                        "    }",
+                        "",
+                        "    public function createQueryBuilder($alias, $indexBy = null): QueryBuilder",
+                        "    {",
+                        "        return $this->createFilteredQueryBuilder(",
+                        "            parent::createQueryBuilder($alias, $indexBy),",
+                        "        );",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "340bfce8d82e7df21fbaee91312055c70b376204"
+        }
+    }
+}
