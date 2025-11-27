@@ -18,14 +18,14 @@ class ProductRepository extends BaseProductRepository
 
     public function __construct(
         EntityManagerInterface $entityManager,
-        ClassMetadata $class,
+        ClassMetadata $classMetadata,
         protected B2BKitProductVisibilityFilteringCheckerInterface $productVisibilityFilteringChecker,
         protected CustomerContextInterface $customerContext,
     ) {
-        parent::__construct($entityManager, $class);
+        parent::__construct($entityManager, $classMetadata);
     }
 
-    public function createQueryBuilder($alias, $indexBy = null): QueryBuilder
+    public function createQueryBuilder(string $alias, string $indexBy = null): QueryBuilder
     {
         return $this->createFilteredQueryBuilder(
             parent::createQueryBuilder($alias, $indexBy),
