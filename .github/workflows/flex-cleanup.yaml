@@ -10,4 +10,4 @@ defaults:
 
 jobs:
     call-flex-cleanup:
-        uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-cleanup.yaml@main
+        uses: tomkalon/SyliusRecipes/.github/workflows/callable-flex-cleanup.yaml@main

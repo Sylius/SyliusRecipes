@@ -11,4 +11,4 @@ defaults:
 
 jobs:
     call-flex-update:
-        uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-update.yaml@main
+        uses: tomkalon/SyliusRecipes/.github/workflows/callable-flex-update.yaml@main
