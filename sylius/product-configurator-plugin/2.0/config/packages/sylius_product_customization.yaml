@@ -1,0 +1,12 @@
+imports:
+    - { resource: "@SyliusProductCustomization/config/config.yaml" }
+
+sylius_resource:
+    resources:
+        product_configurator.product_customization:
+            driver: doctrine/orm
+            classes:
+                model: Sylius\ProductCustomization\Entity\ProductCustomization
+            translation:
+                classes:
+                    model: Sylius\ProductCustomization\Entity\ProductCustomizationTranslation
