@@ -1,0 +1,31 @@
+{
+    "aliases": ["product-configurator"],
+    "bundles": {
+        "Sylius\\ProductCustomization\\SyliusProductCustomization": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/shop/entrypoint.js",
+            "content": "import '@vendor/sylius/product-configurator-plugin/assets/shop/entrypoint';",
+            "position": "bottom",
+            "warn_if_missing": true
+        }
+    ],
+    "post-install-output": [
+        "",
+        "<bg=blue;fg=white>              </>",
+        "<bg=blue;fg=white>  Product Configurator Plugin installed!  </>",
+        "<bg=blue;fg=white>              </>",
+        "",
+        "  Next steps:",
+        "  1. If <comment>src/Entity/Product.php</comment> or <comment>src/Entity/OrderItem.php</comment> already exist,",
+        "     merge the trait and interface from the generated files manually.",
+        "",
+        "  2. Run migrations:",
+        "     <info>php bin/console doctrine:migrations:migrate</info>",
+        ""
+    ]
+}
