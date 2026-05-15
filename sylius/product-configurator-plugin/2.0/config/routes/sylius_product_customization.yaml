@@ -1,0 +1,10 @@
+sylius_product_customization_admin:
+    resource: "@SyliusProductCustomization/config/admin_routing.yaml"
+    prefix: '/%sylius_admin.path_name%'
+
+sylius_product_customization_shop:
+    resource: "@SyliusProductCustomization/config/shop_routing.yaml"
+    prefix: /
+
+sylius_product_customization_controllers:
+    resource: "@SyliusProductCustomization/config/routes.yaml"
