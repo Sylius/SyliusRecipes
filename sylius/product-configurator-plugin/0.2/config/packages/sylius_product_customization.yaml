@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SyliusProductCustomization/config/config.yaml" }
