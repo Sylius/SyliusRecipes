@@ -1,7 +1,7 @@
 {
     "aliases": ["product-configurator"],
     "bundles": {
-        "Sylius\\ProductCustomization\\SyliusProductCustomization": ["all"]
+        "Sylius\\ProductConfiguratorPlugin\\SyliusProductConfiguratorPlugin": ["all"]
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
