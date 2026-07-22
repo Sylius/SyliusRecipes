@@ -1,0 +1,6 @@
+imports:
+    - { resource: "@SyliusCmsPlugin/Resources/config/config.yml" }
+
+twig:
+    form_themes:
+        - '@SyliusCmsPlugin/Form/ckeditor_widget.html.twig'
