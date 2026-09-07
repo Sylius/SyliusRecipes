@@ -10,4 +10,7 @@ defaults:
 
 jobs:
     call-flex-cleanup:
+        permissions:
+            contents: write
+
         uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-cleanup.yaml@main
