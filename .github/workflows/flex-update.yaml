@@ -11,4 +11,7 @@ defaults:
 
 jobs:
     call-flex-update:
+        permissions:
+            contents: write
+
         uses: Sylius/SyliusRecipes/.github/workflows/callable-flex-update.yaml@main
