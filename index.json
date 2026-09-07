@@ -21,6 +21,8 @@
         "onepagecheckout": "sylius/one-page-checkout-plugin",
         "price-history": "sylius/price-history-plugin",
         "pricehistory": "sylius/price-history-plugin",
+        "product-configurator": "sylius/product-configurator-plugin",
+        "productconfigurator": "sylius/product-configurator-plugin",
         "rbac": "sylius/plus-rbac-plugin",
         "return": "sylius/return-plugin",
         "returns": "sylius/return-plugin",
@@ -32,7 +34,8 @@
             "0.4.1",
             "2.0",
             "2.1",
-            "3.0"
+            "3.0",
+            "4.0"
         ],
         "sylius/customer-service-plugin": [
             "0.1",
@@ -65,10 +68,15 @@
         "sylius/price-history-plugin": [
             "0.1"
         ],
+        "sylius/product-configurator-plugin": [
+            "0.1",
+            "0.2"
+        ],
         "sylius/return-plugin": [
             "0.1",
             "0.3",
-            "2.0"
+            "2.0",
+            "2.2"
         ],
         "sylius/rfq-plugin": [
             "1.0",

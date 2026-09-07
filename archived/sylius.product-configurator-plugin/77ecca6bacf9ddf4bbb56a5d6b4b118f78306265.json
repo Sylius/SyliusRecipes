@@ -1,0 +1,61 @@
+{
+    "manifests": {
+        "sylius/product-configurator-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\ProductCustomization\\SyliusProductCustomization": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "assets/shop/entrypoint.js",
+                        "content": "import '@vendor/sylius/product-configurator-plugin/assets/shop/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "config/packages/sylius_product_customization.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@SyliusProductCustomization/config/config.yaml\" }",
+                        "",
+                        "sylius_resource:",
+                        "    resources:",
+                        "        product_configurator.product_customization:",
+                        "            driver: doctrine/orm",
+                        "            classes:",
+                        "                model: Sylius\\ProductCustomization\\Entity\\ProductCustomization",
+                        "            translation:",
+                        "                classes:",
+                        "                    model: Sylius\\ProductCustomization\\Entity\\ProductCustomizationTranslation",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/sylius_product_customization.yaml": {
+                    "contents": [
+                        "sylius_product_customization_admin:",
+                        "    resource: \"@SyliusProductCustomization/config/admin_routing.yaml\"",
+                        "    prefix: '/%sylius_admin.path_name%'",
+                        "",
+                        "sylius_product_customization_shop:",
+                        "    resource: \"@SyliusProductCustomization/config/shop_routing.yaml\"",
+                        "    prefix: /",
+                        "",
+                        "sylius_product_customization_controllers:",
+                        "    resource: \"@SyliusProductCustomization/config/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "77ecca6bacf9ddf4bbb56a5d6b4b118f78306265"
+        }
+    }
+}

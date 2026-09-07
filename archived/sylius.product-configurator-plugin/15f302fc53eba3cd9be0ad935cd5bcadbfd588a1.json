@@ -1,0 +1,35 @@
+{
+    "manifests": {
+        "sylius/product-configurator-plugin": {
+            "manifest": {
+                "bundles": {
+                    "Sylius\\ProductConfiguratorPlugin\\SyliusProductConfiguratorPlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "assets/shop/entrypoint.js",
+                        "content": "import '@vendor/sylius/product-configurator-plugin/assets/shop/entrypoint';",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "config/packages/sylius_product_customization.yaml": {
+                    "contents": [
+                        "imports:",
+                        "  - { resource: \"@SyliusProductConfiguratorPlugin/config/config.yaml\" }",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "15f302fc53eba3cd9be0ad935cd5bcadbfd588a1"
+        }
+    }
+}
