@@ -2,8 +2,6 @@
     "aliases": ["b2b-suite", "b2b-kit"],
     "bundles": {
         "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": ["all"],
-        "FOS\\ElasticaBundle\\FOSElasticaBundle": ["all"],
-        "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": ["all"],
         "Sylius\\GmvBundle\\SyliusGmvBundle": ["all"],
         "Sylius\\WishlistPlugin\\SyliusWishlistPlugin": ["all"],
         "Sylius\\PlusAdminOrderCreationPlugin\\SyliusPlusAdminOrderCreationPlugin": ["all"],
