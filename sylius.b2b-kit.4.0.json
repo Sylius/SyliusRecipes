@@ -6,12 +6,6 @@
                     "OldSound\\RabbitMqBundle\\OldSoundRabbitMqBundle": [
                         "all"
                     ],
-                    "FOS\\ElasticaBundle\\FOSElasticaBundle": [
-                        "all"
-                    ],
-                    "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": [
-                        "all"
-                    ],
                     "Sylius\\GmvBundle\\SyliusGmvBundle": [
                         "all"
                     ],
@@ -200,7 +194,7 @@
                     "executable": false
                 }
             },
-            "ref": "086beb189aa4e75ad96e7b5a667483dd3bfb7e27"
+            "ref": "6165e0f7b17a3f700986ace8daef6f0aa2f829f8"
         }
     }
 }
